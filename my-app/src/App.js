@@ -43,6 +43,7 @@ const MainAppStyle = styled.div`
   h4 {
     font-size: 18px;
     font-weight: 400;
+    color: white;
   }
   .main-section {
     position: relative;
