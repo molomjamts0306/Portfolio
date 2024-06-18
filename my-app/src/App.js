@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import Header from './components/Header';
 import { Container } from 'reactstrap';
 import { TypeAnimation } from 'react-type-animation';
+import GlowingBackground from './components/BackgroundAnimation';
 
 const App = () => {
   return (
     <MainAppStyle>
+      <GlowingBackground />
       <Header />
       <Container>
         <div className="main-section">
@@ -35,7 +37,6 @@ const App = () => {
 
 const MainAppStyle = styled.div`
   position: relative;
-  background-color: #000;
   color: #fff;
   text-align: center;
 
