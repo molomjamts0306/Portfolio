@@ -4,6 +4,7 @@ import Header from './components/Header';
 import { Container } from 'reactstrap';
 import { TypeAnimation } from 'react-type-animation';
 import GlowingBackground from './components/BackgroundAnimation';
+import KnowledgeSection from './components/KnowledgeSection';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             repeat={Infinity}
           />
         </div>
+        <KnowledgeSection />
       </Container>
     </MainAppStyle>
   );
@@ -47,7 +49,7 @@ const MainAppStyle = styled.div`
   }
   .main-section {
     position: relative;
-    top: 40vh;
+    padding: 40vh 0;
   }
 `;
 
