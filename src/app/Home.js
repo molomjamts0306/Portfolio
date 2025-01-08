@@ -6,7 +6,7 @@ import Footer from './Footer';
 const Home = ({ progress }) => {
   return (
     <HomeWrapper className={`${progress === 100 && 'visible'} `}>
-      <Header />
+      <Header progress={progress} />
       <div className="app">
         <div className="header">
           <div className="menu-circle"></div>
@@ -232,7 +232,7 @@ const Home = ({ progress }) => {
         </div>
         <div className="overlay-app"></div>
       </div>
-      <Footer />
+      <Footer progress={progress} />
     </HomeWrapper>
   );
 };
