@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
+import AboutSection from '../components/AboutSection';
+import SkillsSection from '../components/SkillsSection';
+import ProjectSection from '../components/ProjectsSection';
 
 const Home = ({ progress }) => {
+  const [layout, setLayout] = useState(0);
   return (
     <HomeWrapper className={`${progress === 100 && 'visible'} `}>
       <Header progress={progress} />
@@ -11,226 +15,47 @@ const Home = ({ progress }) => {
         <div className="header">
           <div className="menu-circle"></div>
           <div className="header-menu">
-            <a className="menu-link is-active" href="#">
-              Apps
-            </a>
-            <a className="menu-link notify" href="#">
-              Your work
-            </a>
-            <a className="menu-link" href="#">
-              Discover
-            </a>
-            <a className="menu-link notify" href="#">
-              Market
-            </a>
+            <button onClick={() => setLayout(0)} className={`menu-link ${layout === 0 && 'is-active'}`}>
+              About
+            </button>
+            <button onClick={() => setLayout(1)} className={`menu-link notify ${layout === 1 && 'is-active'}`}>
+              Skills
+            </button>
+            <button onClick={() => setLayout(2)} className={`menu-link ${layout === 2 && 'is-active'}`}>
+              Projects
+            </button>
           </div>
           <div className="search-bar">
             <input type="text" placeholder="Search" />
           </div>
           <div className="header-profile">
-            <div className="notification">
-              <span className="notification-number">3</span>
-            </div>
+            <span className="contact-button">Contact Me</span>
           </div>
         </div>
         <div className="wrapper">
           <div className="left-side">
             <div className="side-wrapper">
-              <div className="side-title">Apps</div>
+              <div className="side-title">Social</div>
               <div className="side-menu">
-                <a href="#">All Apps</a>
-              </div>
-            </div>
-            <div className="side-wrapper">
-              <div className="side-title">Categories</div>
-              <div className="side-menu">
-                <a href="#">Photography</a>
-                <a href="#">Graphic Design</a>
-                <a href="#">Video</a>
-                <a href="#">Illustrations</a>
-                <a href="#">UI/UX</a>
-                <a href="#">3D/AR</a>
-              </div>
-            </div>
-            <div className="side-wrapper">
-              <div className="side-title">Fonts</div>
-              <div className="side-menu">
-                <a href="#">Manage Fonts</a>
-              </div>
-            </div>
-            <div className="side-wrapper">
-              <div className="side-title">Resource Links</div>
-              <div className="side-menu">
-                <a href="#">Stock</a>
-                <a href="#">Tutorials</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Behance</a>
-                <a href="#">Social Forum</a>
+                <a href="https://github.com/molomjamts0306/Portfolio" target="_blank" rel="noreferrer">
+                  <img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="" />
+                  Github
+                </a>
+                <a href="https://www.linkedin.com/in/molomjamts-munkhbayar-84b721267/" target="_blank" rel="noreferrer">
+                  <img src="https://i.ibb.co/x6PJsVR/linkedin-removebg-preview-1.png" alt="" />
+                  Linkedin
+                </a>
+                <a href="https://www.facebook.com/mmolomjamts" target="_blank" rel="noreferrer">
+                  <img src="https://cdn-icons-png.freepik.com/256/2111/2111396.png?semt=ais_hybrid" alt="" />
+                  Facebook
+                </a>
               </div>
             </div>
           </div>
-          <div className="main-container">
-            <div className="main-header">
-              <a className="menu-link-main" href="#">
-                All Apps
-              </a>
-              <div className="header-menu">
-                <a className="main-header-link is-active" href="#">
-                  Desktop
-                </a>
-                <a className="main-header-link" href="#">
-                  Mobile
-                </a>
-                <a className="main-header-link" href="#">
-                  Web
-                </a>
-              </div>
-            </div>
-            <div className="content-wrapper">
-              <div className="content-wrapper-header">
-                <div className="content-wrapper-context">
-                  <h3 className="img-content">Adobe Stock</h3>
-                  <div className="content-text">
-                    Grab yourself 10 free images from Adobe Stock in a 30-day free trial plan and find perfect image,
-                    that will help you with your new project.
-                  </div>
-                  <button className="content-button">Start free trial</button>
-                </div>
-                <img className="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="" />
-              </div>
-              <div className="content-section">
-                <div className="content-section-title">Installed</div>
-                <ul>
-                  <li className="adobe-product">
-                    <div className="products">Photoshop</div>
-                    <span className="status">
-                      <span className="status-circle green"></span>
-                      Updated
-                    </span>
-                    <div className="button-wrapper">
-                      <button className="content-button status-button open">Open</button>
-                      <div className="menu">
-                        <button className="dropdown">
-                          <ul>
-                            <li>
-                              <a href="#">Go to Discover</a>
-                            </li>
-                            <li>
-                              <a href="#">Learn more</a>
-                            </li>
-                            <li>
-                              <a href="#">Uninstall</a>
-                            </li>
-                          </ul>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="adobe-product">
-                    <div className="products">Illustrator</div>
-
-                    <span className="status">
-                      <span className="status-circle"></span>
-                      Update Available
-                    </span>
-                    <div className="button-wrapper">
-                      <button className="content-button status-button">Update this app</button>
-                      <div className="pop-up">
-                        <div className="pop-up__title">Update This App</div>
-                        <div className="pop-up__subtitle">
-                          Adjust your selections for advanced options as desired before continuing.{' '}
-                          <a href="#">Learn more</a>
-                        </div>
-                        <div className="checkbox-wrapper">
-                          <input type="checkbox" id="check1" className="checkbox" />
-                          <label htmlFor="check1">Import previous settings and preferences</label>
-                        </div>
-                        <div className="checkbox-wrapper">
-                          <input type="checkbox" id="check2" className="checkbox" />
-                          <label htmlFor="check2">Remove old versions</label>
-                        </div>
-                        <div className="content-button-wrapper">
-                          <button className="content-button status-button open close">Cancel</button>
-                          <button className="content-button status-button">Continue</button>
-                        </div>
-                      </div>
-                      <div className="menu">
-                        <button className="dropdown">
-                          <ul>
-                            <li>
-                              <a href="#">Go to Discover</a>
-                            </li>
-                            <li>
-                              <a href="#">Learn more</a>
-                            </li>
-                            <li>
-                              <a href="#">Uninstall</a>
-                            </li>
-                          </ul>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="adobe-product">
-                    <div className="products">After Effects</div>
-                    <span className="status">
-                      <span className="status-circle green"></span>
-                      Updated
-                    </span>
-                    <div className="button-wrapper">
-                      <button className="content-button status-button open">Open</button>
-                      <div className="menu">
-                        <button className="dropdown">
-                          <ul>
-                            <li>
-                              <a href="#">Go to Discover</a>
-                            </li>
-                            <li>
-                              <a href="#">Learn more</a>
-                            </li>
-                            <li>
-                              <a href="#">Uninstall</a>
-                            </li>
-                          </ul>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="content-section">
-                <div className="content-section-title">Apps in your plan</div>
-                <div className="apps-card">
-                  <div className="app-card">
-                    <span>Premiere Pro</span>
-                    <div className="app-card__subtext">Edit, master and create fully proffesional videos</div>
-                    <div className="app-card-buttons">
-                      <button className="content-button status-button">Update</button>
-                      <div className="menu"></div>
-                    </div>
-                  </div>
-                  <div className="app-card">
-                    <span>InDesign</span>
-                    <div className="app-card__subtext">Design and publish great projects & mockups</div>
-                    <div className="app-card-buttons">
-                      <button className="content-button status-button">Update</button>
-                      <div className="menu"></div>
-                    </div>
-                  </div>
-                  <div className="app-card">
-                    <span>After Effects</span>
-                    <div className="app-card__subtext">Industry Standart motion graphics & visual effects</div>
-                    <div className="app-card-buttons">
-                      <button className="content-button status-button">Update</button>
-                      <div className="menu"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {layout === 0 && <AboutSection />}
+          {layout === 1 && <SkillsSection />}
+          {layout === 2 && <ProjectSection />}
         </div>
-        <div className="overlay-app"></div>
       </div>
       <Footer progress={progress} />
     </HomeWrapper>
@@ -286,7 +111,6 @@ const HomeWrapper = styled.div`
     align-items: center;
     flex-shrink: 0;
     height: 58px;
-    width: 100%;
     border-bottom: 1px solid var(--border-color);
     padding: 0 30px;
     white-space: nowrap;
@@ -296,7 +120,11 @@ const HomeWrapper = styled.div`
     &-menu {
       display: flex;
       align-items: center;
-      a {
+      button {
+        background-color: unset;
+        border: none;
+        font-size: 15px;
+        font-weight: 500;
         padding: 20px 30px;
         text-decoration: none;
         color: var(--inactive-color);
@@ -381,48 +209,20 @@ const HomeWrapper = styled.div`
   .header-profile {
     display: flex;
     align-items: center;
-    padding: 0 16px 0 40px;
     margin-left: auto;
     flex-shrink: 0;
-    width: 176px;
-    svg {
-      width: 22px;
-      color: #f9fafb;
-      flex-shrink: 0;
-    }
-  }
-
-  .notification {
-    position: relative;
-    &-number {
-      position: absolute;
-      background-color: #3a6df0;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      font-size: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      right: -6px;
-      top: -6px;
-    }
-    & + svg {
-      margin-left: 22px;
-      @media screen and (max-width: 945px) {
-        display: none;
+    transition: 0.3s;
+    .contact-button {
+      margin-left: 10px;
+      padding: 20px 30px;
+      border-bottom: 2px solid transparent;
+      color: var(--inactive-color);
+      transition: 0.3s;
+      &:hover {
+        color: var(--theme-color);
+        border-bottom: 2px solid var(--theme-color);
       }
     }
-  }
-
-  .profile-img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--theme-color);
-    margin-left: 22px;
   }
 
   .wide {
@@ -464,7 +264,8 @@ const HomeWrapper = styled.div`
   }
 
   .side-title {
-    color: var(--inactive-color);
+    //color: var(--inactive-color);
+    color: #fff;
     margin-bottom: 14px;
   }
 
@@ -472,6 +273,10 @@ const HomeWrapper = styled.div`
     display: flex;
     flex-direction: column;
     white-space: nowrap;
+    img {
+      width: 20px;
+      margin-right: 10px;
+    }
     a {
       text-decoration: none;
       color: var(--theme-color);
@@ -513,7 +318,7 @@ const HomeWrapper = styled.div`
       @media screen and (max-width: 1055px) {
         margin: auto;
       }
-      a {
+      button {
         padding: 20px 24px;
       }
     }
@@ -546,30 +351,23 @@ const HomeWrapper = styled.div`
       padding: 20px;
     }
     &-header {
+      min-height: 450px;
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
-      //width: 100%;
       justify-content: space-between;
-      background-image: url('https://www.transparenttextures.com/patterns/cubes.png'),
-        linear-gradient(
-          to right top,
-          #cf4af3,
-          #e73bd7,
-          #f631bc,
-          #fd31a2,
-          #ff3a8b,
-          #ff4b78,
-          #ff5e68,
-          #ff705c,
-          #ff8c51,
-          #ffaa49,
-          #ffc848,
-          #ffe652
-        );
+      background-color: var(--theme-bg-color);
       border-radius: 14px;
       padding: 20px 40px;
       @media screen and (max-width: 415px) {
         padding: 20px;
+      }
+      .left-img {
+        height: 450px;
+        position: absolute;
+        top: 30px;
+        right: -150px;
       }
     }
     &.overlay {
