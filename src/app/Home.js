@@ -8,6 +8,9 @@ import ProjectSection from '../components/ProjectsSection';
 
 const Home = ({ progress }) => {
   const [layout, setLayout] = useState(0);
+  const sendEmail = () => {
+    window.location.href = 'mailto:molomjamts21@gmail.com?subject=Hello&body=This%20is%20a%20test%20email.';
+  };
   return (
     <HomeWrapper className={`${progress === 100 && 'visible'} `}>
       <Header progress={progress} />
@@ -29,7 +32,9 @@ const Home = ({ progress }) => {
             <input type="text" placeholder="Search" />
           </div>
           <div className="header-profile">
-            <span className="contact-button">Contact Me</span>
+            <button onClick={sendEmail} className="contact-button">
+              Contact Me
+            </button>
           </div>
         </div>
         <div className="wrapper">
@@ -213,6 +218,10 @@ const HomeWrapper = styled.div`
     flex-shrink: 0;
     transition: 0.3s;
     .contact-button {
+      background-color: transparent;
+      border: none;
+      font-size: 15px;
+      font-weight: 500;
       margin-left: 10px;
       padding: 20px 30px;
       border-bottom: 2px solid transparent;

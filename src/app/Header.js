@@ -70,6 +70,7 @@ const HeaderWrapper = styled.div`
     align-items: center;
     gap: 0 14px;
     padding-right: 10px;
+    pointer-events: none;
   }
 `;
 
