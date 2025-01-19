@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Header from './Header';
-import Footer from './Footer';
-import AboutSection from '../components/AboutSection';
-import SkillsSection from '../components/SkillsSection';
-import ProjectSection from '../components/ProjectsSection';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import AboutSection from './components/AboutSection';
+import SkillsSection from './components/SkillsSection';
+import ProjectSection from './components/ProjectsSection';
 
 const Home = ({ progress }) => {
   const [layout, setLayout] = useState(0);

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ReactComponent as AppleLogo } from '../assets/icons/appleLogo.svg';
-import { ReactComponent as NavigationLogo } from '../assets/icons/navigationLogo.svg';
-import RealtimeClock from '../components/RealtimeClock';
+import { ReactComponent as AppleLogo } from '../../assets/icons/appleLogo.svg';
+import { ReactComponent as NavigationLogo } from '../../assets/icons/navigationLogo.svg';
+import RealtimeClock from './RealtimeClock';
 
 const Header = ({ progress }) => {
   return (

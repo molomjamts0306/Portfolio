@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Maintypes } from '../assets/icons/mainIconsdark.svg';
+import { ReactComponent as Maintypes } from '../../assets/icons/mainIconsdark.svg';
 
 const AboutSection = () => {
   const sendEmail = () => {

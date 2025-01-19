@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import finder from '../assets/icons/finder.png';
-import safari from '../assets/icons/safari.png';
-import terminal from '../assets/icons/terminal.png';
-import facetime from '../assets/icons/facetime.png';
-import notes from '../assets/icons/notes.png';
-import calculator from '../assets/icons/calculator.png';
-import appstore from '../assets/icons/appstore.png';
+import finder from '../../assets/icons/finder.png';
+import safari from '../../assets/icons/safari.png';
+import terminal from '../../assets/icons/terminal.png';
+import facetime from '../../assets/icons/facetime.png';
+import notes from '../../assets/icons/notes.png';
+import calculator from '../../assets/icons/calculator.png';
+import appstore from '../../assets/icons/appstore.png';
 
 const Footer = ({ progress }) => {
   const [availableApps] = React.useState(apps);
