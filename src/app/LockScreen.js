@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import mainProfile from '../assets/user.jpg';
 import { Box, LinearProgress } from '@mui/material';
 import Home from './Home';
+import HomeMobile from './HomeMobile';
 
 const LockScreen = () => {
+  const mobileDetect = window.innerWidth < 992;
   const [progress, setProgress] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
@@ -32,7 +34,7 @@ const LockScreen = () => {
           </div>
         </div>
       </MainAppStyle>
-      <Home progress={progress} />
+      {mobileDetect ? <HomeMobile progress={progress} /> : <Home progress={progress} />}
     </>
   );
 };
