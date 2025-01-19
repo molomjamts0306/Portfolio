@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 
 const ProjectSection = () => {
   return (
     <ProjectWrapper>
       <h3>Projects</h3>
-      <Swiper spaceBetween={50} slidesPerView={2} autoplay loop>
+      <Swiper modules={[Autoplay]} spaceBetween={50} autoplay slidesPerView={2} loop>
         {projects.map((d, idx) => (
           <SwiperSlide>
             <a className="project-item" key={idx} href={d.link} target="_blank" rel="noreferrer">
