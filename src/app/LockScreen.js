@@ -5,7 +5,7 @@ import { Box, LinearProgress } from '@mui/material';
 import Home from './Home';
 
 const LockScreen = () => {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(100);
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {

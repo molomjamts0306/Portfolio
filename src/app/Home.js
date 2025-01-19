@@ -24,7 +24,7 @@ const Home = ({ progress }) => {
             <button onClick={() => setLayout(1)} className={`menu-link notify ${layout === 1 && 'is-active'}`}>
               Skills
             </button>
-            <button onClick={() => setLayout(2)} className={`menu-link ${layout === 2 && 'is-active'}`}>
+            <button onClick={() => setLayout(2)} className={`menu-link new ${layout === 2 && 'is-active'}`}>
               Projects
             </button>
           </div>
@@ -86,14 +86,17 @@ const HomeWrapper = styled.div`
   opacity: 0;
   visibility: hidden;
   transition: all 400ms ease-in-out;
+
   &.visible {
     opacity: 1;
     visibility: visible;
     transition: all 400ms ease-in-out;
   }
+
   @media screen and (max-width: 480px) {
     padding: 0.8em;
   }
+
   .app {
     background-color: var(--theme-bg-color);
     max-width: 1250px;
@@ -122,9 +125,11 @@ const HomeWrapper = styled.div`
     @media screen and (max-width: 480px) {
       padding: 0 16px;
     }
+
     &-menu {
       display: flex;
       align-items: center;
+
       button {
         background-color: unset;
         border: none;
@@ -140,6 +145,7 @@ const HomeWrapper = styled.div`
             display: none;
           }
         }
+
         &.is-active,
         &:hover {
           color: var(--theme-color);
@@ -151,6 +157,7 @@ const HomeWrapper = styled.div`
 
   .notify {
     position: relative;
+
     &:before {
       content: '';
       position: absolute;
@@ -161,6 +168,26 @@ const HomeWrapper = styled.div`
       right: 20px;
       top: 16px;
     }
+
+    @media screen and (max-width: 1055px) {
+      display: none;
+    }
+  }
+
+  .new {
+    position: relative;
+    &:before {
+      animation: bounce 1.5s infinite ease-in-out;
+      content: '';
+      position: absolute;
+      background-color: #7df03a;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      right: 20px;
+      top: 16px;
+    }
+
     @media screen and (max-width: 1055px) {
       display: none;
     }
@@ -188,6 +215,7 @@ const HomeWrapper = styled.div`
     max-width: 400px;
     padding-left: 16px;
     border-radius: 4px;
+
     input {
       width: 100%;
       height: 100%;
@@ -203,6 +231,7 @@ const HomeWrapper = styled.div`
       background-repeat: no-repeat;
       background-position: 16px 48%;
       color: var(--theme-color);
+
       &::placeholder {
         color: var(--inactive-color);
         font-size: 15px;
@@ -217,6 +246,7 @@ const HomeWrapper = styled.div`
     margin-left: auto;
     flex-shrink: 0;
     transition: 0.3s;
+
     .contact-button {
       background-color: transparent;
       border: none;
@@ -227,6 +257,7 @@ const HomeWrapper = styled.div`
       border-bottom: 2px solid transparent;
       color: var(--inactive-color);
       transition: 0.3s;
+
       &:hover {
         color: var(--theme-color);
         border-bottom: 2px solid var(--theme-color);
@@ -239,6 +270,7 @@ const HomeWrapper = styled.div`
     .header-profile {
       display: none;
     }
+
     .search-bar {
       max-width: 600px;
       margin: auto;
@@ -246,6 +278,7 @@ const HomeWrapper = styled.div`
       box-shadow: 0 0 0 1px var(--border-color);
       padding-left: 0;
     }
+
     .menu-circle {
       margin-right: 0;
     }
@@ -282,10 +315,12 @@ const HomeWrapper = styled.div`
     display: flex;
     flex-direction: column;
     white-space: nowrap;
+
     img {
       width: 20px;
       margin-right: 10px;
     }
+
     a {
       text-decoration: none;
       color: var(--theme-color);
@@ -296,10 +331,12 @@ const HomeWrapper = styled.div`
       font-size: 14px;
       border-radius: 6px;
       transition: 0.3s;
+
       &:hover {
         background-color: var(--hover-menu-bg);
       }
     }
+
     svg {
       width: 16px;
       margin-right: 8px;
@@ -322,11 +359,13 @@ const HomeWrapper = styled.div`
     border-bottom: 1px solid var(--border-color);
     height: 58px;
     flex-shrink: 0;
+
     .header-menu {
       margin-left: 150px;
       @media screen and (max-width: 1055px) {
         margin: auto;
       }
+
       button {
         padding: 20px 24px;
       }
@@ -359,6 +398,7 @@ const HomeWrapper = styled.div`
     @media screen and (max-width: 510px) {
       padding: 20px;
     }
+
     &-header {
       min-height: 450px;
       position: relative;
@@ -372,6 +412,7 @@ const HomeWrapper = styled.div`
       @media screen and (max-width: 415px) {
         padding: 20px;
       }
+
       .left-img {
         height: 450px;
         position: absolute;
@@ -379,6 +420,7 @@ const HomeWrapper = styled.div`
         right: -150px;
       }
     }
+
     &.overlay {
       pointer-events: none;
       transition: 0.3s;
@@ -397,6 +439,7 @@ const HomeWrapper = styled.div`
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
+
     &.is-active {
       visibility: visible;
       opacity: 1;
@@ -409,6 +452,7 @@ const HomeWrapper = styled.div`
     display: flex;
     align-items: center;
     margin: 0;
+
     svg {
       width: 28px;
       margin-right: 14px;
@@ -458,10 +502,12 @@ const HomeWrapper = styled.div`
     margin-top: 30px;
     display: flex;
     flex-direction: column;
+
     &-title {
       color: var(--content-title-color);
       margin-bottom: 14px;
     }
+
     ul {
       display: flex;
       flex-direction: column;
@@ -474,6 +520,7 @@ const HomeWrapper = styled.div`
       border-radius: 14px;
       border: 1px solid var(--theme-bg-color);
       cursor: pointer;
+
       li {
         list-style: none;
         padding: 10px 18px;
@@ -484,19 +531,24 @@ const HomeWrapper = styled.div`
         height: 100%;
         white-space: nowrap;
         transition: 0.3s;
+
         &:hover {
           background-color: var(--theme-bg-color);
+
           &:first-child {
             border-radius: 13px 13px 0 0;
           }
+
           &:last-child {
             border-radius: 0 0 13px 13px;
           }
         }
+
         & + li {
           border-top: 1px solid var(--border-color);
         }
       }
+
       svg {
         width: 28px;
         border-radius: 6px;
@@ -514,6 +566,7 @@ const HomeWrapper = styled.div`
       width: 120px;
     }
   }
+
   .status {
     margin-left: auto;
     width: 140px;
@@ -522,6 +575,7 @@ const HomeWrapper = styled.div`
     @media screen and (max-width: 700px) {
       display: none;
     }
+
     &-circle {
       width: 6px;
       height: 6px;
@@ -530,10 +584,12 @@ const HomeWrapper = styled.div`
       border-radius: 50%;
       top: 4px;
       left: -20px;
+
       &.green {
         background-color: #3bf083;
       }
     }
+
     &-button {
       font-size: 15px;
       margin-top: 0;
@@ -541,11 +597,13 @@ const HomeWrapper = styled.div`
       @media screen and (max-width: 390px) {
         padding: 6px 14px;
       }
+
       &.open {
         background: none;
         color: var(--button-inactive);
         border: 1px solid var(--button-inactive);
       }
+
       &:not(.open):hover {
         color: #fff;
         border-color: #fff;
@@ -584,6 +642,7 @@ const HomeWrapper = styled.div`
     background: transparent;
     border: none;
     cursor: pointer;
+
     ul {
       position: absolute;
       background: var(--dropdown-bg);
@@ -595,6 +654,7 @@ const HomeWrapper = styled.div`
       opacity: 0;
       transform: translatey(10px);
       transition: all 0.4s ease;
+
       li a {
         text-decoration: none;
         color: var(--theme-color);
@@ -608,6 +668,7 @@ const HomeWrapper = styled.div`
       opacity: 1;
       pointer-events: all;
       transform: translatey(25px);
+
       li:hover {
         background-color: var(--dropdown-hover);
       }
@@ -646,10 +707,12 @@ const HomeWrapper = styled.div`
     @media screen and (max-width: 570px) {
       width: 100%;
     }
+
     &.visible {
       visibility: visible;
       opacity: 1;
     }
+
     &__title {
       padding-bottom: 20px;
       border-bottom: 1px solid var(--border-color);
@@ -657,12 +720,14 @@ const HomeWrapper = styled.div`
       justify-content: space-between;
       align-items: center;
     }
+
     &__subtitle {
       white-space: normal;
       margin: 20px 0;
       font-size: 14px;
       font-weight: 400;
       line-height: 1.8em;
+
       a {
         color: var(--theme-color);
       }
@@ -683,6 +748,7 @@ const HomeWrapper = styled.div`
     align-items: center;
     font-size: 14px;
     font-weight: 400;
+
     & + .checkbox-wrapper {
       margin: 20px 0 40px;
     }
@@ -695,6 +761,7 @@ const HomeWrapper = styled.div`
   .checkbox + label {
     display: flex;
     align-items: center;
+
     &:before {
       content: '';
       margin-right: 10px;
@@ -719,6 +786,7 @@ const HomeWrapper = styled.div`
   .content-button-wrapper {
     margin-top: auto;
     margin-left: auto;
+
     .open {
       margin-right: 8px;
     }
@@ -742,23 +810,28 @@ const HomeWrapper = styled.div`
     padding: 20px;
     cursor: pointer;
     transition: 0.3s ease;
+
     &:hover {
       transform: scale(1.02);
       background-color: var(--theme-bg-color);
     }
+
     svg {
       width: 28px;
       border-radius: 6px;
       margin-right: 12px;
       flex-shrink: 0;
     }
+
     & + .app-card {
       margin-left: 20px;
     }
+
     span {
       display: flex;
       align-items: center;
     }
+
     &__subtext {
       font-size: 14px;
       font-weight: 400;
@@ -767,12 +840,14 @@ const HomeWrapper = styled.div`
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 20px;
     }
+
     &-buttons {
       display: flex;
       align-items: center;
       margin-left: auto;
       margin-top: 16px;
     }
+
     @media screen and (max-width: 1110px) {
       width: calc(50% - 20px);
       &:last-child {
@@ -797,6 +872,16 @@ const HomeWrapper = styled.div`
   ::-webkit-scrollbar-thumb {
     background: var(--scrollbar-bg);
     border-radius: 10px;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
   }
 `;
 
