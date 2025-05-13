@@ -4,10 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
 const ProjectSection = () => {
+  const mobileDetect = window.innerWidth < 992;
   return (
     <ProjectWrapper>
       <h3>Projects</h3>
-      <Swiper modules={[Autoplay]} spaceBetween={50} autoplay slidesPerView={2} loop>
+      <Swiper modules={[Autoplay]} spaceBetween={50} autoplay slidesPerView={mobileDetect ? 1 : 2} loop>
         {projects.map((d, idx) => (
           <SwiperSlide>
             <a className="project-item" key={idx} href={d.link} target="_blank" rel="noreferrer">
@@ -51,6 +52,9 @@ const ProjectWrapper = styled.div`
   h3 {
     font-size: 26px;
     color: #fff;
+    @media (max-width: 992px) {
+      color: #000;
+    }
   }
   .project-item {
     position: relative;
@@ -59,6 +63,9 @@ const ProjectWrapper = styled.div`
       width: 100%;
       object-fit: contain;
       transition: transform 200ms ease-in-out;
+      @media (max-width: 992px) {
+        width: 90%;
+      }
     }
     &:hover {
       img {

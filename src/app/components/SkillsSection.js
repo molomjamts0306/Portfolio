@@ -88,5 +88,22 @@ const SkillWrapper = styled.div`
       }
     }
   }
+  @media (max-width: 992px) {
+    padding: 1em;
+    margin-bottom: 15px;
+    .main-title {
+      margin: 10px 0;
+    }
+    .section {
+      height: 60vh;
+      margin: 10px 0;
+      grid-template-columns: 1fr 1fr 1fr;
+      .item {
+        .name {
+          color: #000;
+        }
+      }
+    }
+  }
 `;
 export default SkillSection;
