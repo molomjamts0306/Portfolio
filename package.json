@@ -8,12 +8,17 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.3.1",
     "@mui/styled-engine-sc": "^6.3.1",
+    "@radix-ui/react-accordion": "^1.2.11",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.7",
     "caniuse-lite": "^1.0.30001690",
     "clsx": "^2.1.1",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^11.2.10",
+    "lucide-react": "^0.525.0",
+    "motion": "^12.23.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1",
@@ -52,7 +57,9 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "gh-pages": "^6.1.1",
+    "postcss": "^8.5.6",
     "prettier": "^3.3.2"
   }
 }
