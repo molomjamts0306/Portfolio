@@ -251,6 +251,9 @@ body {
   background: var(--dark-bg-primary);
   position: relative;
   overflow: hidden;
+  @media(max-width: 992px){
+    padding: 100px 0;
+  }
 }
 
 .hero-section::before {
