@@ -15,9 +15,7 @@ export default function About() {
         'Next.js',
         'Bootstrap',
         'Javascript',
-        'Bootstrap',
         'MUI',
-        'Next.js',
       ],
     },
     {

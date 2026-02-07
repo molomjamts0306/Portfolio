@@ -17,8 +17,8 @@ export default function Projects() {
           </div>
           <div className="row">
             <Swiper slidesPerView={mobile ? 1 : 2} navigation spaceBetween={50} autoplay={{ delay: 3000 }} loop={true}>
-              {projects.map((project) => (
-                <SwiperSlide key={project.id} className="">
+              {projects.map((project, id) => (
+                <SwiperSlide key={id} className="">
                   <div className="project h-100 w-100">
                     {project.img && (
                       <div style={{ overflow: 'hidden' }}>
@@ -40,8 +40,8 @@ export default function Projects() {
                       <h3 className="card-title">{project.title}</h3>
                       <p className="card-text">{project.description}</p>
                       <div className="mb-4">
-                        {project.technologies?.map((d, i) => (
-                          <span key={d.id} className="badge badge-primary">
+                        {project.technologies?.map((d) => (
+                          <span key={`${project.title}-${d}`} className="badge badge-primary">
                             {d}
                           </span>
                         ))}
