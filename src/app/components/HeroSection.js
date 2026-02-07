@@ -71,36 +71,11 @@ export default function Hero() {
 
           <div className="col-md-6">
             <div className="text-center">
-              <div
-                style={{
-                  width: '300px',
-                  height: '300px',
-                  margin: '0 auto',
-                  background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '4rem',
-                  fontWeight: '700',
-                  color: 'white',
-                  position: 'relative',
-                }}
-              >
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: '20px',
-                    background: '#1e293b',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  Mono
-                </div>
-              </div>
+              <img
+                src="/undraw_programming_j1zw.svg"
+                alt="Developer mark"
+                style={{ width: '52%', height: '52%', objectFit: 'contain' }}
+              />
             </div>
           </div>
         </div>
@@ -124,18 +99,18 @@ export default function Hero() {
       </button>
 
       <style>{`
-                @keyframes bounce {
-                    0%, 20%, 50%, 80%, 100% {
-                        transform: translateX(-50%) translateY(0);
-                    }
-                    40% {
-                        transform: translateX(-50%) translateY(-10px);
-                    }
-                    60% {
-                        transform: translateX(-50%) translateY(-5px);
-                    }
-                }
-            `}</style>
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+          }
+          40% {
+            transform: translateX(-50%) translateY(-10px);
+          }
+          60% {
+            transform: translateX(-50%) translateY(-5px);
+          }
+        }
+      `}</style>
     </section>
   );
 }
